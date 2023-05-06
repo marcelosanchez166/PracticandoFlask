@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- De esta forma se llaman el archivo css con Jinja2 -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <title>{{data.titulo}}</title>
+
+</head>
+
+<body>
+    <!-- Hipervinculos para llamar plantillas con Jinja2 y Flask  <a href="{{url_for('index2')}}">index</a>-->
+    <a href="{{url_for('index2')}}">index</a><!--Forma para pasar de una pagina a otra con Jinja2, con esto llamo a los metodos correspondientes que estan en app.py los cuales hace uso 
+    de render_template-->
+    <a href="{{url_for('contacto')}}">contacto  </a>
+    <hr/>
+    <h1> {{data.encabezado}} </h1>
+    {% block contenido%}<!-- Abrir un bloque de contenido -->
+    {%endblock%}<!-- cerrar el bloque de contenido de arriba -->
+    <script src = "{{url_for('static',filename='js/index.js')}}"></script><!-- Forma para llamar un archivo .js con Jinja 2-->
+
+    {%block prueba%}
+    {%endblock%}
+    
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{% extends './Plantillabase.html' %}
+
+<!-- Bloque de contenido de la ruta lenguajes para que se muestre una lista de lenguajes de programacion, recorriendo la lista que se encuentra en un diccionario llamado data y dentro
+de el tiene una lista con los lenguajes de programacion -->
+{% block contenido %}
+<ul>
+    {% if data.lenguajes|length>0 %}<!-- Estructura if con validacion si la longitud de data.lenguajes es mayor a 0 entoces que recorra la lista y muestre los lenguajes -->
+        {% for i in data.lenguajes %}<!--Forma de crear un ciclo for en Jinja2 ademas siempre hay que cerrar todas las estruturas, en este for se recorre una lista que esta dentro de un diccionario-->
+            <li> {{ i }} </li><!--mostrando los lenguajes de programacion en una lista desordenada-->
+        {% endfor %}<!--cierre del ciclo for -->
+    {% else %}<!--condicional else del if em Jinja2-->
+        <h2>No existen lenguajes de programacion</h2><!--Lo que se mostrara si no hay lenguajes en la lista lo metimos en un h2-->
+    {%endif%}<!--Cierre de la estructura if-->
+</ul>
+{% endblock %}

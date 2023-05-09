@@ -31,6 +31,18 @@ def hi():
     return 'Hello, World'
 
 
+# string (Por defecto) acepta cualquier texto sin barra
+
+# int acepta números enteros positivos
+
+# float acepta valores positivos en coma flotante
+
+# path como string pero también acepta barras inclinadas
+
+# uuid acepta cadenas (string) UUID
+
+
+
 @app.route('/user/<username>')#Esta ruta espera dos valores la ruta y el nombre del usuario asi http://127.0.0.1:5000/user/Marcelo
 def show_user_profile(username):
     # show the user profile for that user
@@ -48,6 +60,8 @@ def show_subpath(subpath):
 
 
 
+
+
 @app.route('/projects/')#Retornara el string The project page cargando la siguiente ruta http://127.0.0.1:5000/projects/
 def projects():
     return 'The project page'
@@ -55,3 +69,5 @@ def projects():
 @app.route('/about')#Retornara el string The about page cargando la siguiente ruta http://127.0.0.1:5000/about
 def about():
     return 'The about page'
+
+

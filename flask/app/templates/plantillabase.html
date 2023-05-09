@@ -1,0 +1,36 @@
+<!-- Herencia de plantillas
+La parte más poderosa de Jinja es la herencia de plantillas. La herencia de plantillas te permite construir una plantilla base «esqueleto» 
+que contiene todos los elementos comunes de tu sitio y define bloques que las plantillas hijas pueden sobrescribir.
+
+Suena complicado pero es muy básico. Lo más fácil es entenderlo empezando con un ejemplo.
+
+Plantilla base
+Esta plantilla, a la que llamaremos layout.html, define un simple documento esqueleto de HTML que podría utilizar para una simple página de dos columnas. 
+El trabajo de las plantillas «hijas» es llenar los bloques vacíos con contenido: -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="footer">
+        {% block footer %}
+            &copy; Copyright 2010 by <a href="http://domain.invalid/">you</a>.
+        {% endblock %}
+    </div>
+</body>
+</html>
+
+
+<!-- En este ejemplo, las etiquetas  block definen cuatro bloques que las plantillas hijas pueden rellenar. Todo lo que hace la etiqueta block es 
+indicar al motor de la plantilla que una plantilla hija puede anular esas partes de la plantilla. -->

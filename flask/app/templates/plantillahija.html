@@ -1,0 +1,25 @@
+<!-- Plantilla hija
+Una plantilla hija podría tener el siguiente aspecto: -->
+
+{% extends "plantillabase.html" %}<!-- Heredando de la plantillabase.html, esa plantilla tiene blockes vacios para que las plantillas hijas las llenen o usen esos bloques cuando 
+heredan de la plantilla base llamando los bloques configurados en la plantilla base -->
+
+
+{% block title %} Plantilla Hija {% endblock %}<!-- Usando el bloque title heredado de la plantilla base -->
+{% block head %}<!-- Usando el bloque head heredado de la plantilla base -->
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>Plantilla Hija</h1>
+    <p class="important">
+        Welcome on my awesome homepage.
+{% endblock %}
+
+
+<!-- La etiqueta extends es la clave aquí. Indica al motor de plantillas que esta plantilla «extiende» otra plantilla. 
+Cuando el sistema de plantillas evalúa esta plantilla, primero localiza el padre. La etiqueta extends debe ser la primera etiqueta de la plantilla. 
+Para mostrar el contenido de un bloque definido en la plantilla principal, utilice {{ super() }}. -->

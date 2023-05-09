@@ -46,7 +46,7 @@ def hi():
 @app.route('/user/<username>')#Esta ruta espera dos valores la ruta y el nombre del usuario asi http://127.0.0.1:5000/user/Marcelo
 def show_user_profile(username):
     # show the user profile for that user
-    return f'User {escape(username)}'
+    return f'User {escape( username)}'
 
 @app.route('/post/<int:post_id>')#Esta ruta espera dos valores la ruta y un numero, asi http://127.0.0.1:5000/post/19 ya que espera un entero si se le pasa un string dara error
 def show_post(post_id):
@@ -69,5 +69,3 @@ def projects():
 @app.route('/about')#Retornara el string The about page cargando la siguiente ruta http://127.0.0.1:5000/about
 def about():
     return 'The about page'
-
-

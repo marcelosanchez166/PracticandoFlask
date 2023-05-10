@@ -1,4 +1,4 @@
-from flask import request, Flask, render_template
+from flask import request, Flask, render_template, redirect, url_for
 
 app = Flask(__name__)
 
@@ -27,3 +27,46 @@ with app.test_request_context('/hello', method='POST'):
 
 # with app.request_context(environ):
 #     assert request.method == 'POST'
+
+
+
+
+# El objeto Request
+# El objeto request está documentado en la sección API y no lo cubriremos aquí en detalle (ver Request). A continuación, un amplio resumen de algunas de las operaciones más comunes.
+# En primer lugar tienes que importarlo desde el módulo flask:
+
+from flask import request
+
+# El método de solicitud actual está disponible utilizando el atributo method. Para acceder a los datos del formulario (datos transmitidos en una petición POST o PUT) 
+# se puede utilizar el atributo form. He aquí un ejemplo completo de los dos atributos mencionados anteriormente:
+
+def valid_login():
+    if request.form['username']=="Marcelo" and request.form['password'] =="123456":
+        redirect(url_for("login"))
+
+
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if valid_login(request.form['username'],
+                    request.form['password']):
+            return request.form['username']
+        else:
+            error = 'Invalid username/password'
+    # the code below is executed if the request method
+    # was GET or the credentials were invalid
+    return render_template('login.html', error=error)
+
+# ¿Qué ocurre si la clave no existe en el atributo form? En ese caso se produce un KeyError especial. Puedes cogerlo como un KeyError estándar, pero si no lo haces, 
+# se muestra una página de error HTTP 400 Bad Request en su lugar. Así que para muchas situaciones no tienes que lidiar con ese problema.
+
+# Para acceder a los parámetros enviados en la URL (?key=value) puede utilizar el atributo args:
+
+searchword = request.args.get('key', '')
+
+# Recomendamos acceder a los parámetros de la URL con get o capturando el KeyError porque los usuarios podrían cambiar la URL y presentarles una página 400 de solicitud 
+# incorrecta en ese caso no es amigable para el usuario.
+
+# Para una lista completa de métodos y atributos del objeto request, dirígete a la documentación de Request.

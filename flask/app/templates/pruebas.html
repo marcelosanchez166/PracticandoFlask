@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="m-3 fst-italic d-flex flex-column" action="{{ url_for('prueba') }}" method="post">
+        <table class="table-bordered border border-light table showteams table-dark table-striped  table-hover">
+            <thead>
+                <tr class="mx-auto text-center" style="font-size: smaller; border: 1px solid #ddd;">
+                    <th>Día</th>
+                    <th>Hora de inicio</th>
+                    <th>Hora de fin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="mx-auto text-center">
+                    <td>
+                        <label for="lunes">Lunes:</label>
+                        <input type="checkbox" name="lunes" value="lunes" id="lunes" />
+                    </td>
+                    <td>
+                        <select class="custom-select col-md-6 text-center" id="lunes" name="lunes">
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="custom-select col-md-6 text-center" id="lunes" name="lunes">
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                            <option value="18">18:00</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Repite estos bloques para cada día -->
+                <tr class="mx-auto text-center">
+                    <td>
+                        <label for="martes">Martes:</label>
+                        <input type="checkbox" name="martes" value="martes" id="martes" />
+                    </td>
+                    <td>
+                        <select class="custom-select col-md-6 text-center" id="martes" name="martes">
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="custom-select col-md-6 text-center" id="martes" name="martes">
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                            <option value="18">18:00</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Repite estos bloques para cada día -->
+                <tr class="mx-auto text-center">
+                    <td>
+                        <label for="miercoles">Miercoles:</label>
+                        <input type="checkbox" name="miercoles" value="miercoles" id="miercoles">
+                    </td>
+                    <td>
+                        <select class="custom-select col-md-6 text-center" id="miercoles" name="miercoles">
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="custom-select col-md-6 text-center" id="miercoles" name="miercoles">
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                            <option value="18">18:00</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Repite estos bloques para cada día -->
+                <tr class="mx-auto text-center">
+                    <td>
+                        <label for="jueves">Jueves:</label>
+                        <input type="checkbox" name="jueves" value="jueves" id="jueves">
+                    </td>
+                    <td>
+                        <select class="custom-select col-md-6 text-center" id="jueves" name="jueves">
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="custom-select col-md-6 text-center" id="jueves" name="jueves">
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                            <option value="18">18:00</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Repite estos bloques para cada día -->
+                <tr class="mx-auto text-center">
+                    <td>
+                        <label for="viernes">Viernes:</label>
+                        <input type="checkbox" name="viernes" value="viernes" id="viernes">
+                    </td>
+                    <td>
+                        <select class="custom-select col-md-6 text-center" id="viernes" name="viernes">
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="custom-select col-md-6 text-center" id="viernes" name="viernes">
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                            <option value="18">18:00</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Repite estos bloques para cada día -->
+                <!-- Añade más filas según sea necesario -->
+            </tbody>
+        </table>
+        <div class="container text-center">
+            <button type="submit" class="btn btn-primary" style="width: max-content;">Agregar Equipo</button>
+        </div>
+    </form>
+    <br>
+    <hr>
+    {% for dia, horas in diccionario_horarios.items() %}
+    <tr>
+        <td>{{ dia }}</td>
+        <td>{{ horas.hora_inicio }}</td>
+        <td>{{ horas.hora_fin }}</td>
+    </tr>
+{% endfor %}
+</body>
+</html>

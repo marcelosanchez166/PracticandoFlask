@@ -1,0 +1,25 @@
+{% extends './base.html' %}<!--Heredando de la plantilla base.html que es la que tiene el css bootstrap -->
+
+{% block title %}
+    Inicio de Sesion
+{% endblock %}
+
+{% block CustomCSS %}<!-- Este bloque esta creado en la plantilla base.html y lo llamo aca para no ponerlo en la plantilla base.html de esa forma solo afectara a la plantilla logn.html -->
+<link href="{{url_for('static', filename='CSS/login.css')}}" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %} <!-- En este bloque estoy creando el login traido de bootstrap para crear el login mas facil y rapido-->
+<!-- En la etiquete form estan dos atributos el action que sirve para saber a donde enviaremos los datos del formulario y el method que es el metodo por el que se enviaran los datos -->
+<form class="form-signin" action="/login" method="POST">
+    <img class="mb-4" src="{{url_for('static', filename='img/Flask_logo.svg')}}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Inicio de Sesi&oacute;n</h1>
+    <label for="usuario" class="sr-only">usuario</label>
+    <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Nombre de Usuario" minlength="6" maxlength="20" required autofocus>
+    <br />
+    <label for="password" class="sr-only">Password</label>
+    <input type="password" id="password" name="password" class="form-control" placeholder="Password" minlength="6" maxlength="24" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesi&oacute;n</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2022-2023</p>
+</form>
+{% endblock %}

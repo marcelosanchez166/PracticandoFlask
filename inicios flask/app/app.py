@@ -22,7 +22,7 @@ def after_request(response):#LA funcion after_request se le debe pasar una respu
 # Existe otra forma de exponer las rutas, la cual se agrega en el if __name__ == '__main__': dicha linea es la siguiente app.add_url_rule("/",view_func=index2)
 # vista dos
 
-
+@app.route("/")
 def index2():
     print("Estamos realizando la peticion.... ")
     #return "Mi primer codigo en Flask2"
@@ -73,11 +73,11 @@ def perfil(nombre,edad):
 
 @app.route("/lenguajes")
 def lenguajes():
-    data={
+    lenguaje={
         "Hay_lenguajes":False,
         "lenguajes":["PHP","JavaScript","Java","Kotlin","C#","C++"]
         }
-    return render_template('lenguajes.html',data=data)
+    return render_template('lenguajes.html',data=lenguaje)
 
 
 """Queries string"""

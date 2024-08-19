@@ -1,0 +1,29 @@
+<!-- esta sera la plantilla que va a renderizar la vista index desde el archivo __init__.py  -->
+
+<!-- Para comenzar debemos hacer un extends de body.html -->
+{% extends './body.html' %}
+
+<!-- modificando el bloque title el cual tendra de titulo index -->
+{% block title %} 
+    Index 
+{% endblock %} 
+
+{% block CustomCSS %}
+<link href="{{url_for('static', filename='CSS/index.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block container %} 
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12"><!-- sirve para que se pueda mostrar el contenido dependiendo del tamaño del dispositivo, ya que bootstrap usa un sistema
+    de division de la pantalla en 12 espacios para que nosotros podamos asignar que un bloque tenga 3,4,6 hasta 12 espacios esto determina cuando espacio va a tomar la pagina cuando 
+    Se redimenciones -->
+        <h1> Libreria "La Torre de Papel" </h1>  
+    </div>
+</div>
+
+<hr/>
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h2> Bienvenido al libreria "La Torre de Papel" </h2>
+    </div>
+{% endblock %}
